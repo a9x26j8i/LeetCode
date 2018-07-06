@@ -7,7 +7,7 @@ class Solution {
                 i = Math.max(map.get(s.charAt(j))+1, i);
             }
             max = Math.max(max, j-i+1);
-            //validating while putting entries into HashMap
+            //HashMap Entry-put along with verifying
             map.put(s.charAt(j), j);
             if(j==s.length()-1)
                 max = Math.max(max, j-i+1);
