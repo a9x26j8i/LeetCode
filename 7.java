@@ -8,7 +8,6 @@ class Solution {
             x=x/10;
             if((newresult)/10!=result)return 0;
             result = newresult;
-            
         }
         return result;
     }
