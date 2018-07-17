@@ -39,9 +39,11 @@ class Solution {
     }
     //find the smallest element
     private int smallestIndex(int[] nums, int pivotI){
+        int least = nums[pivotI-1];
         int si = pivotI;
         while(pivotI<nums.length){
-            if(nums[pivotI]<nums[si]){
+            //!!!!the exchange element should be larger than nums[i-1]
+            if(nums[pivotI]>least&&nums[pivotI]<nums[si]){
                 si=pivotI;
             }
             pivotI++;
