@@ -1,17 +1,18 @@
-void sortColors(int A[], int n) {
-    int n0 = -1, n1 = -1, n2 = -1;
-    for (int i = 0; i < n; ++i) {
-        if (A[i] == 0) 
-        {
-            A[++n2] = 2; A[++n1] = 1; A[++n0] = 0;
-        }
-        else if (A[i] == 1) 
-        {
-            A[++n2] = 2; A[++n1] = 1;
-        }
-        else if (A[i] == 2) 
-        {
-            A[++n2] = 2;
+class Solution { 
+    //one-pass algo1: Crane-like & multi-pointer 
+    public void sortColors(int[] nums){
+        int red=-1, white=-1, blue=-1;
+        for(int i=0; i<nums.length; i++){
+            if(nums[i] == 0){
+                nums[++blue] = 2;
+                nums[++white] = 1;
+                nums[++red] = 0;
+            }else if(nums[i] == 1){
+                nums[++blue] = 2;
+                nums[++white] = 1;
+            }else{
+                nums[++blue] = 2;
+            }
         }
     }
 }
