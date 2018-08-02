@@ -15,4 +15,23 @@ class Solution {
             }
         }
     }
+
+    // one-pass algo2: multi-pointer & double-end
+    // public void sortColors(int[] nums){
+    //     int front=0, back=nums.length-1;
+    //     for(int i=0; i<=back; i++){
+    //         if(nums[i] == 0){
+    //             nums[i] = nums[front];
+    //             nums[front]=0;
+    //             front++;
+                
+    //         }
+    //         if(nums[i] == 2){
+    //             nums[i] = nums[back];
+    //             nums[back] = 2;
+    //             back--;
+    //             i--;
+    //         }
+    //     }
+    // }
 }
