@@ -1,6 +1,6 @@
 class Solution {
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
-        int width = obstacleGrid[0].length ;
+        int width = obstacleGrid[0].length;
         //dp itself is divisive(for left and above element)
         //notations in dp is different with that in row[], the left most element in dp is always the newest data(for left),
         //dp will traverse each row
