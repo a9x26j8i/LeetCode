@@ -1,0 +1,32 @@
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        final int SIZE = 256;
+        boolean[] curEndChars = new boolean[SIZE];
+        int head = 0;
+        int curMax = 0;
+        for(int i=0; i<s.length(); i++){
+            //每加一个字母，可能1.将准结果串升级为结果串2.升级潜在串为准结果串 => 最优情况：以当前字母为结尾的最长子串，可线性处理。
+            //LC3.每加一个数字，可能1。将准结果串升级为结果串2.升级潜在串为准结果串2.将潜潜在串升级为潜在串...... 不可线性处理：记录关键信息。
+            //update endChar and caculate 
+            while(curEndChars[s.charAt(i)] != false){
+                curEndChars[s.charAt(head)] = false;
+                head++;
+            }
+            curEndChars[s.charAt(i)] = true;
+            int curEndLength = len(curEndChars);
+            //compare curEndCharsLength with last max length
+            curMax = Math.max(curEndLength, curMax);
+        }
+        return curMax;
+    }
+    
+    private int len(boolean[] barray){
+        int count = 0;
+        for(int i=0; i<barray.length; i++){
+            if(barray[i] == true){
+                count ++;
+            }
+        }
+        return count;
+    }
+}
